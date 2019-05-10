@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form method='post'>
+        <p>Title</p>
+            <input type="text" name="name", value="{{item.name}}" placeholder="{{item.name}}">
+        <p>Description:</p>
+            <input type="text" name="description", value="{{item.description}}", placeholder="{{item.description}}">
+        <select name="kind">
+            {% for k in kinds %}
+            <option value="{{k.name}}">{{k.name}}</option>
+            {% endfor %}
+        </select><br>
+        <input type="submit" value="Edit"><br>
+        <a href = "{{url_for('showOneItem', kindName=item.kind.name, itemName=item.name)}}">Cancel</a>
+
+
+    </form>
+
+</body>
+</html>

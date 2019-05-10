@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Items in {{kind.name}}</title>
+</head>
+<body>
+    <h1>Categories</h1>
+    <div>
+        <ul>
+            {% for k in kinds %}
+                <a href="{{url_for('showAllItems', kindName=k.name)}}">{{k.name}}</a><br>
+            {% endfor %}
+        </ul>
+    </div>
+    <h1>{{kind.name}} Items (X items)</h1>
+     <a href="{{url_for('newItem', kindName=kind.name)}}">Add Item</a>
+        <ul>
+            {% for i in items %}
+                <a href="{{url_for('showOneItem', kindName=kind.name, itemName=i.name)}}">{{i.name}}</a><br>
+            {% endfor %}
+        </ul>
+
+
+</body>
+</html>

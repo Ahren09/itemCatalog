@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{item.name}}</title>
+</head>
+<body>
+    <h1>{{item.name}}</h1>
+    <p>{{item.description}}</p>
+    <a href="{{url_for('editItem', itemName=item.name)}}">Edit</a> | 
+    <a href="{{url_for('deleteItem', itemName=item.name)}}">Delete</a><br>
+
+    <a href="{{url_for('showAllItems', kindName=item.kind.name)}}">Cancel</a>
+</body>
+</html>

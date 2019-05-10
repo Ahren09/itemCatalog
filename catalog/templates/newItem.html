@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create new item in{{kind.name}}</title>
+</head>
+<body>Create new item in {{kind.name}}</h1>
+    <form method='post'>
+        <p>Title</p>
+            <input type="text" name="name">
+        <p>Description:</p>
+            <input type="text" name="description">
+        <p>Kind</p>
+        <select name="kind">
+            {% for k in kinds %}
+            <option value="{{k.name}}">{{k.name}}</option>
+            {% endfor %}
+        </select><br>
+        <input type="submit" value="Create"><br>
+        <a href = "{{url_for('showAllItems', kindName=kind.name)}}">Cancel</a>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catalog</title>
+</head>
+<body>
+    <h1>Categories</h1>
+    <div>
+        <ul>
+            {% for k in kinds %}
+                <a href="{{url_for('showAllItems', kindName=k.name)}}">{{k.name}}</a><br>
+            {% endfor %}
+        </ul>
+        
+
+    </div>
+
+</body>
+</html>
